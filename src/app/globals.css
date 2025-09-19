@@ -1,37 +1,46 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* FlightDeal Finder Design System
+   Primary: #1A73E8 (Blue)
+   Accent: #FF7043 (Orange)
+   Neutrals: #F5F7FA, #E4E8F0
+   Typography: Poppins (headings), Inter (body)
+   All colors MUST be HSL.
 */
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --foreground: 210 11% 15%;
 
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 210 11% 15%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover-foreground: 210 11% 15%;
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  /* Primary Blue: #1A73E8 */
+  --primary: 217 92% 51%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  /* Secondary Gray */
+  --secondary: 216 20% 95%;
+  --secondary-foreground: 210 11% 15%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  /* Muted Gray: #F5F7FA */
+  --muted: 216 20% 98%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  /* Accent Orange: #FF7043 */
+  --accent: 17 100% 63%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  /* Border Gray: #E4E8F0 */
+  --border: 216 21% 89%;
+  --input: 216 21% 89%;
+  --ring: 217 92% 51%;
 
   --radius: 0.5rem;
 
@@ -157,7 +166,47 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Typography System */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* FlightDeal Finder Custom Styles */
+.world-map-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E4E8F0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.deal-card-gradient {
+  background: linear-gradient(135deg, rgba(26,115,232,0.05) 0%, rgba(255,112,67,0.05) 100%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #1A73E8 0%, #4285F4 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
 }
